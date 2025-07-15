@@ -1,0 +1,54 @@
+.body{
+   background: linear-gradient(to bottom , green, rgb(1, 13, 1)) ;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   font-weight: 'bold';
+   padding: 20PX;
+}     
+body{
+    padding: 0;
+    margin: 0;
+}   
+h1{
+    color: goldenrod;
+    text-align: center;
+    font-weight: 900;
+}          
+p{
+    color: white;
+    text-align: center;
+    font-style: italic;
+}   
+button{
+    padding: 5px;
+    width: 150px;
+    color: green;
+    background-color: goldenrod;
+    display: flex;
+    margin: 4px;
+    justify-self: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 600
+}
+.orange-s{
+    background: rgb(252, 116, 66);
+    width: 200px;
+    height: 30px;
+    display: flex;
+    justify-self: center;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: white;
+}
+.apple-s{
+    background: rgb(205, 95, 95);
+      width: 200px;
+    height: 30px;
+    display: flex;
+    justify-self: center;
+    border-radius: 5px;
+    color: white;
+
+
+}

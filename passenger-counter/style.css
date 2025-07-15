@@ -1,0 +1,52 @@
+body{
+    background-color: #343434 !important;
+}
+h2{
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 70px;
+    font-size: 30px;
+}
+p{
+    text-align: center;
+    font-size: 50px;
+    color: aqua;
+}
+button{
+    padding: 10px 50px;
+    /* text-align: center; */
+    display: flex;
+    justify-self: center;
+    background-color: rgb(31, 3, 3);
+    font-size: 24px;
+    border: none;
+    color: wheat;
+    border-radius: 6px;
+}
+#increment-btn{
+    background-color: darkred;
+
+}
+#save-btn{
+    background-color: darkgreen;
+    border-radius: 1000px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.calc button{
+    margin: 10px !important;
+}
+.calc span{
+    text-decoration: underline;
+    background-color: aliceblue;
+    padding: 4px;
+    border-radius: 2px;
+    display: flex;
+    justify-self: center;
+    margin: 4px;
+
+
+}

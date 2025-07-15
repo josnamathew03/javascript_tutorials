@@ -1,0 +1,280 @@
+we can display js data as output in different ways:
+    -innerHTML or innerText
+        to aces element you can use document.getElementById(id)
+        use id attribute to identify
+        use innerHTML to change the html content
+        document.getElementById("id").innerHTML = "<h2>hello</h2>"
+    -document.writea()
+        FOR testing purposes we can document.write(4+4)
+        Using document.write() after an HTML document is loaded, will delete all existing HTML:
+        <button type="button" onclick="document.write(5 + 6)">Try it</button>
+    -window.alert()
+        window.alert(5+6) or     
+        alert(3+4)
+    -console.log()
+        for debugging
+    -textContent
+        we will gey all the ccontents even its display none
+
+---------------------------------------------------------------------------
+
+
+The JavaScript syntax defines two types of values:
+
+Fixed values
+Variable values
+Fixed values are called Literals.
+
+Variable values are called Variables.
+1. Always declare variables
+
+2. Always use const if the value should not be changed
+
+3. Always use const if the type should not be changed (Arrays and Objects)
+
+4. Only use let if you can't use const
+
+5. Only use var if you MUST support old browsers.
+
+-----------------------------------------------------------------------
+
+Data Types:
+
+number is a datatype
+
+let x = 16 + 4 + "Volvo";  output=20Volvo
+
+JavaScript BigInt is a new datatype (ES2020) that can be used to store integer values that are too big to be represented by a normal JavaScript Number.
+    let x = BigInt("123456789012345678901234567890");
+JavaScript objects are written with curly braces {}.
+
+Object properties are written as name:value pairs, separated by commas.
+    const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+The typeof operator returns the type of a variable or an expression:
+    typeof ""             // Returns "string"
+    typeof "John"         // Returns "string"
+
+-----------------------------------------------------------------------------
+
+Functions:
+
+The code inside the function will execute when "something" invokes (calls) the function:
+
+When an event occurs (when a user clicks a button)
+When it is invoked (called) from JavaScript code
+Automatically (self invoked)
+
+With functions you can reuse code
+
+You can write code that can be used many times.
+
+You can use the same code with different arguments, to produce different results.
+The () operator invokes (calls) the function:
+
+Variables declared within a JavaScript function, become LOCAL to the function.
+
+Local variables can only be accessed from within the function.
+    
+let c = 0;
+
+function learn(){
+    c =c+1;
+
+}
+learn()
+learn()
+learn()
+console.log(c);
+
+--------------------------------------------------------------------
+
+DOM : Document Object Model (aka hoe to use js to modify a website)
+
+    document refrs to the htmml document.
+    document keyword on js has object data type
+    model is a reoresentation of the real element
+
+-----------------------------------------------------------------
+
+string:
+    Templates are strings enclosed in backticks (`This is a template string`).
+
+    Templates allow single and double quotes inside a string:
+        let text = `He's often called "Johnny"`;
+    Templates allow multiline strings:
+        let text =
+            `The quick
+            brown fox
+            jumps over
+            the lazy dog`;
+    lenfth of a string can be find using length proprty
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let length = text.length;
+    let text = "We are the so-called \"Vikings\" from the north.";
++ concatnate strings
+
+while concatnate a string with a number ot convet the number toa string
+
+-----------------------------------------------------------------------
+
+if 
+else if 
+else
+
+=== : stricly equal, in == if its a string and number then it is also true. 
+
+let pass=7
+if(pass<6){
+    console.log("free")
+}
+else if( pass<17){
+    console.log("chilld discount")
+}
+else if(pass<26){
+    console.log("student discount")
+}
+else if(pass<66){
+    console.log("full price")
+}
+else {
+    console.log("senior")
+}
+
+----------------------------------------------------------------------
+
+Query selector:
+
+querySelector() is a method used to select the first HTML element that matches a CSS selector.
+Like css if we want to select by id use # , if class use ., also we can use selectors
+
+
+ ------------------------------------------------------------------
+ Arrays
+ ordered list of items   
+ array is zero indexed     
+ length is not zero indexed: arr.length
+ composite / complex datatypes  
+ hetrogeneous
+ adding item to end of array : push method
+    cards.push(8 )
+-creating array
+    const array_name = [item1, item2, ...];  
+    Note
+        It is a common practice to declare arrays with the const keyword.
+    const cars = [];
+
+    cars[0]= "Saab";
+    cars[1]= "Volvo";
+    cars[2]= "BMW";
+
+    const cars = new Array("Saab", "Volvo", "BMW");
+
+-acessing elements(just like python)
+
+-changingan element                
+    cars[0] = "Opel";    
+                                                                                                                                                                                                                                                              
+-converting to strings
+    The JavaScript method toString() converts an array to a string of (comma separated) array values.
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("demo").innerHTML = fruits.toString();
+
+-properties and methods
+    cars.length   // Returns the number of elements
+    cars.sort()   // Sorts the array
+
+-accessing last element
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let fruit = fruits[fruits.length - 1];
+
+
+--------------------------------------------------------------------
+
+objects
+
+-crating :
+    const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+    // Create an Object
+    const person = {}
+    // Add Properties
+    person.firstName = "John";
+    person.lastName = "Doe";
+    person.age = 50;
+    person.eyeColor = "blue";
+
+    // Create an Object
+    const person = new Object();  
+    // Add Properties
+    person.firstName = "John";
+    person.lastName = "Doe";
+    person.age = 50;
+    person.eyeColor = "blue";
+
+-Acesisng properties 
+    objectName.propertyName
+    objectName["propertyName"]
+
+-object methods
+    actions that can be perfirmed on objects
+    methos is a functiion definition stores as a property value
+    accessing-objectName.methodName() //if parenthesis is not given thr function definition will   be returned
+    adding function property to an object - person.name = function () {
+                                                return this.firstName + " " + this.lastName;
+                                            }   ;
+
+-adding new oroperty 
+    person.nationality = "English";
+
+-deleting properties    
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        age: 50,
+        eyeColor: "blue"
+    };
+    delete person.age;
+
+-nested objects
+    myObj = {
+        name:"John",
+        age:30,
+        myCars: {
+            car1:"Ford",
+            car2:"BMW",
+            car3:"Fiat"
+        }
+    }
+    myObj.myCars.car2;
+    myObj.myCars["car2"];
+    myObj["myCars"]["car2"];
+
+    let p1 = "myCars";
+    let p2 = "car2";
+    myObj[p1][p2];
+----------------------------------------------------
+for loop:
+    for(let count=1; count<11; count+=1)
+
+
+-------------------------------------------------
+math.random
+    create random number between 0 and 1 donot include 1.
+    Math.random() *6 crate random number between 0 and 6
+    for creating a range from 1 to 12 just add 1
+        return Math.floor(ran) + 1
+        
+
+-----------------------------------------------------
+math.floor 
+    remove decimal and round it to the number below it
+
+
+function roll(){
+    return Math.floor(Math.random() * 6) +1
+}
+
+console.log(roll())
+-----------------------------------------
+instead of nestef if else we can use logica, operators
