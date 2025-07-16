@@ -158,3 +158,99 @@ function sorting(){
     }
 }
 sorting()
+
+// ------------------------------------------------
+
+let boxEl=document.getElementById("box-el")
+boxEl.addEventListener('click',function(){
+    console.log("button clicked")
+})
+// ---------------------------------------------------
+let cont = document.getElementById("con")
+con.innerHTML = "<button>hi</button>"
+
+
+let con = document.getElementById("con")
+con.innerHTML = "<button onclick=Buy() >hi</button>"
+
+function Buy(){
+    con.innerHTML += "<p>thanks</p>"
+}
+
+// ---------------------------------------------------------
+  const li = document.createElement("li")
+   li.textContent=myLeads[i]
+   ulEl.append(li)
+
+    let listItem=""
+   for (let i = 0; i < myLeads.length; i++) {
+    // console.log(myLeads[i])
+    listItem += "<li>" + myLeads[i] + "</li>"
+ 
+}
+    ulEl.innerHTML = listItem
+
+// ----------------------------------------------------
+const receipient = "james"
+
+const email = `hey ${receipient}! How is it going`
+console.log(email)
+
+myLeads = JSON.parse(myLeads)
+console.log(typeof(myLeads))  
+myLeads.push("www.face")         
+console.log(myLeads)
+myLeads = JSON.stringify(myLeads)
+console.log(typeof(myLeads))
+
+// -----------------------------------------
+
+const welEl = document.getElementById("well-el")
+console.log(
+greet("hey","jos",1,2)
+
+)
+
+function greet(text,name,num1,num2){
+    
+    welEl.textContent = `${text}  ${name}`
+    return num1+num2 
+
+}
+
+// --------------------------------------------------
+
+
+const welEl = document.getElementById("well-el")
+console.log(
+    greet([1, 3, 4])
+
+)
+
+function greet(arr) {
+
+    // welEl.textContent = `${text}  ${name}`
+    return arr[0]
+
+}
+
+// -------------------------------------------------------
+
+function generateSen(des,arr){
+    return `The ${arr.length} largest countries are ${arr}` 
+}
+console.log(generateSen("largest country",["china","india"]))
+
+// ---------------------------------------------------------
+
+const arr1=[
+    "he","heee","hee hee"
+]
+
+const container = document.querySelector(".container")
+let spans=""
+
+for (let i=0; i<arr.length; i++){
+    spans += `<span>${arr[i]} </span>`
+}
+container.innerHTML = spans

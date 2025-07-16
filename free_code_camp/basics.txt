@@ -116,6 +116,10 @@ string:
 
 while concatnate a string with a number ot convet the number toa string
 
+--------------------------------------------------------------------
+Template Strings:
+ 
+
 -----------------------------------------------------------------------
 
 if 
@@ -278,3 +282,54 @@ function roll(){
 console.log(roll())
 -----------------------------------------
 instead of nestef if else we can use logica, operators
+
+---------------------------------------------------------------
+
+javascript events
+  
+  -onclick
+
+----------------------------------------------------------------
+
+using innerhtml we can add html tags if we want
+instead of using innerHTML, we can use create element and append it
+
+----------------------------------------------------------------
+
+manifest.json:
+ javascript object notation
+ for json we use quotes for keys
+ its not exactly javascript object its actuallly mimicking the object behaviour
+
+ --------------------------------------------------------------------
+ deploying thee chroem extrnsion
+ in extension on developer mode and load extension by selecting the folder
+
+   ---------------------------------------------------------------
+
+localStorage
+    localStorage is a built-in web storage feature that lets you store data in the browser — and it stays saved even when the page is refreshed or the browser is closed.
+    everything stored in localstorage is a string
+    so before storing we can use 
+        localStorage.setItem("name",JSON.stringify(name));
+    for retreiving fro local storage we can use 
+        var storedNames = JSOn.parse(localStorage.getItem("names))
+
+-----------------------------------------------------------------
+
+to check whether a value is truthy or falsy we can use Boolean(expression)
+
+insread of uding  only mu=yleads inside function we can pass an aray which contain any content by passing it as an argument and recr=eiving it.
+
+--------------------------------------------------------------
+
+arguments are created outside function definition that is when it is creates.
+parameters are things inside the function
+
+----------------------------------------------------------
+grab the ur l inthe cuttent tab
+
+
+
+
+
