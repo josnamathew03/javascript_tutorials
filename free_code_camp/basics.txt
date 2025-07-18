@@ -1,9 +1,14 @@
+the page is renderes by the browser like a tree which is called document. document got childrens ie head and body and they got subchilderns and so on.
+
 we can display js data as output in different ways:
-    -innerHTML or innerText
-        to aces element you can use document.getElementById(id)
+    -innerHTML or 
+         get all the html contents
+        to aces element you can use document.getElementById(id)                             
         use id attribute to identify
-        use innerHTML to change the html content
+        use innerHTML to change the html content                                                                 
         document.getElementById("id").innerHTML = "<h2>hello</h2>"
+    -innerText
+        get text that the browser render
     -document.writea()
         FOR testing purposes we can document.write(4+4)
         Using document.write() after an HTML document is loaded, will delete all existing HTML:
@@ -14,7 +19,7 @@ we can display js data as output in different ways:
     -console.log()
         for debugging
     -textContent
-        we will gey all the ccontents even its display none
+        we will gey all the ccontents even its display none.get all the contents inside that div
 
 ---------------------------------------------------------------------------
 
@@ -40,7 +45,7 @@ Variable values are called Variables.
 
 Data Types:
 
-number is a datatype
+number is a datatype                 
 
 let x = 16 + 4 + "Volvo";  output=20Volvo
 
@@ -94,7 +99,7 @@ DOM : Document Object Model (aka hoe to use js to modify a website)
     document refrs to the htmml document.
     document keyword on js has object data type
     model is a reoresentation of the real element
-
+                        
 -----------------------------------------------------------------
 
 string:
