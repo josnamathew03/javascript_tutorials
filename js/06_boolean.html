@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if (5>3)
+            console.log(true);
+        else
+            console.log(false);
+        //true
+        //false
+        console.log(5=='5.0')
+        if (false)
+            console.log('hello');
+        else
+            console.log('bye')
+        const age=18;
+        if(age>=18)
+            console.log("eligible");
+        else if (age==17)
+            console.log("almost");
+        else
+            console.log("not eligible")
+        console.log(true||false);
+        console.log(true&&false);
+        console.log(true==false);
+        if(5){
+            console.log('truthy');
+        }
+        let tr=5
+        if(tr){
+            console.log('done')
+        }
+        const res=true ? 'truthy':'falsy';
+        console.log(res);
+
+        const mess=5 && 'hello'; //let mess;
+                                //if(condition)
+                                //  mess=hello
+        console.log(mess);
+        const message=0 && 'hello';
+        console.log(message);
+
+        const currency='EUO' || 'USD'
+        console.log(currency);
+        const curr=undefined || 'USD';//let currency;
+                                    //if(!condition)
+                                        //currency='USD'
+        console.log(curr);
+
+
+
+    </script>
+</body>
+</html>

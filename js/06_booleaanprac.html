@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bool exercise</title>
+</head>
+<body>
+    <script>
+        let hr=15;
+        let name='jos';
+    if(hr>=6 && hr<=12){
+            console.log(`Good morning ${name}`);
+        }
+    else if(hr>=13 && hr<=17){
+        console.log(`Good eve  ${name}`);
+    }
+    else{
+        console.log(`good night ${name}`);
+    }
+
+    const vari=Math.random();
+    let guess='tails';
+    let res='';
+    if(vari>=0 && vari<=0.5){
+        res='heads';
+    }
+    else if(vari >.5 && vari<=1){
+        res='tails';
+    }
+
+    if(guess==res){
+        console.log(`${res}, you won`)
+    }
+    else{
+        console.log(`${res} ,you lose`)
+    }
+    </script>
+</body>
+</html>

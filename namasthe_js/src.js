@@ -156,9 +156,43 @@ const out7 = users.reduce(function(acc,cur){
 },"")
 console.log(out7)
 
+     
+
+// -------------------------------------------------------------------------------
 
 
- 
+const cart = ['shoes','pants']
+const promise = createOrder(cart)
+                                  
+
+promise.then(function(orderId){    
+    console.log(orderId)
+})   
+.catch(function(err){
+    console.log(err)
+})       
+                   
+function createOrder(cart){
+    const pr = new Promise(function(resolve,reject){
+        const orderId = 123
+        if(false){
+            resolve(orderId)
+        }
+        else{
+            const err = new Error("cart error")
+            reject(err)
+        }
+    })
+    return pr                      
+}
+
+                                                 
+
+
+                                                                         
+
+
+
 
 
 

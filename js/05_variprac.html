@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practical variables</title>
+</head>
+<body>
+    <button onclick="calcu+='1';console.log(calcu)">
+        1
+    </button>
+    <button onclick="calcu+='2';console.log(calcu)">
+        2
+    </button>
+    <button onclick="calcu+='3';console.log(calcu)">
+        3
+    </button>
+    <button onclick="calcu+='+';console.log(calcu)">
+        +    
+    </button>
+    <button onclick="calcu=eval(calcu); console.log(calcu)">
+        =      
+    </button>
+<script>
+    var name='josna';
+    console.log(`my name:${name}`);
+    let cost=5+2*3+9;
+    console.log(`cost:$${cost}`);
+    let res=cost*0.1;
+    console.log(`Tax:$${res}`);
+    let calcu = '';
+</script>
+</body>
+</html>

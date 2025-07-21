@@ -1,0 +1,28 @@
+.add-btn{
+    background-color: rgb(255,216,20);
+    width: 100px;
+    border: none;
+    padding: 3px;
+    margin: 10px;
+    border-radius: 10px;
+
+}
+.req-btn,.is-toggle{
+    background-color: black;
+    color: white;
+
+}
+.req-btn,.sche-btn{
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    width: 150px;
+}
+.toggle-btn button{
+      border: none;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    width: 150px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart quantity</title>
+</head>
+<body>
+    <button onclick="
+    console.log(`cart quantity:${cartquan}`);
+    ">
+        show quantity
+    </button>
+    <button onclick="
+    if(cartquan>=10){
+        alert('cart is full');
+    }
+    else{
+        cartquan=cartquan+1;
+        console.log(`cart quantity:${cartquan}`);
+    }
+        ">
+        Add to cart
+    </button>
+    <button onclick="
+    if(cartquan>=10){
+        alert('cart is full');
+    }
+    else{
+    cartquan+=2;
+    console.log(`cart quantity:${cartquan}`);
+    }
+    ">
+        +2
+    </button>
+    <button onclick="
+    if(cartquan>=10){
+        alert('cart is full');
+    }
+    else{
+    cartquan+=3;
+    console.log(`cart quantity:${cartquan}`);
+    }
+    ">
+        +3
+    </button>
+    <button onlick="
+    cartquan = 0;
+    console.log('Cart was reset.');
+    console.log(`Cart quantity: ${cartquan}`);
+    ">
+        rest
+    </button>
+    <script>
+        let cartquan=0;
+        //console.log(cartquan+=2)
+
+    </script>
+</body>
+</html>
