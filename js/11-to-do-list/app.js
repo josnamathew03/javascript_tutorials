@@ -2,24 +2,77 @@ const inputEl = document.getElementById("input-el")
 const btnEl = document.getElementById("btn-el")
 const divEl = document.getElementById("div-el")
 const delBtn = document.getElementById('del-btn')
+const dateEl = document.getElementById("date-el")
 
 let arr = []
 
+
+const local = JSON.parse(localStorage.getItem("localList"))
+if (local) {
+    arr = local
+    renderList(local)
+}
+
 btnEl.addEventListener('click', () => {
-    arr.push(inputEl.value)
-    divEl.innerHTML += `<p>
-                            ${inputEl.value}
-                            <button id="del-btn">delete</button>
-                         </p>`
-
+    arr.push({
+        name: inputEl.value,
+        due: dateEl.value
+    })
     inputEl.value = ''
-    console.log(arr)
-
+    dateEl.value = ''
+    localStorage.setItem("localList", JSON.stringify(arr))
+    // console.log(arr)
+    renderList(arr)
 })
 
-delBtn.addEventListener('click',(e)=>{
-    
-})
+
+
+function renderList(arr) {
+    let htmlList = ''
+    for (let i = 0; i < arr.length; i++) {
+        htmlList += `<p>
+                            ${arr[i].name}   : ${arr[i].due}
+                            <button id="del-btn" onclick="arr.splice(${i},1); renderList(arr)">delete</button>
+                         </p>`
+    }
+    divEl.innerHTML = htmlList
+
+}
+
+function findIndex(food) {
+    let foodr = food.slice().reverse()
+    let count = 0
+    for (let i = 0; i < foodr.length; i++) {
+        if (foodr[i] === 'egg') {
+            count++
+            if (count <= 2) {
+                foodr.splice(i, 1)
+
+            }
+        }
+    }
+    console.log(food)
+    return foodr
+}
+
+console.log(findIndex(["egg", "milk","meat", "egg","egg"]))
+
+
+function fizzbuzz(){
+    for(let i=0;i<=20;i++){
+        if(i%3===0){
+            console.log('fizz')
+            continue
+        }
+        console.log(i)
+    }
+}
+fizzbuzz()
+
+// const arr2= [1,2,6,6]
+// const [f,s] = arr2
+// console.log(f,s)
+
 
 
 // function arraySwap(swapArr){
