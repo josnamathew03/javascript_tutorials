@@ -110,7 +110,7 @@ inputBtn.addEventListener('click', function () {
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
     render(myLeads)
 })
-
+                  
 function render(leads) {
     let items = ""
 
@@ -120,21 +120,25 @@ function render(leads) {
                 <a href=${format}>
                 ${leads[i]}
                 </a>
-            </li>`
+            </li>`                                                                                                                                            
     }
     ulEl.innerHTML = items
 
 }
 
-function formatt(url){
+function formatt(url){                                                                                                   
     if(!url.startsWith('https')){
-        return "http://"+url
+        return "http://"+url                                                                       
     }
     return url
 }
 
+                                                                     
+
+          
+
+                                  
 
 
-
-
+ 
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <script>
+        const local=localStorage.getItem('message');
+        console.log(local);
+
+        const product={
+            name:'socks',
+            price:190
+        };
+
+
+        /*console.log(product);
+        console.log(product.name);
+        product.price=200;
+        console.log(product.price);
+        product.color='red';
+        console.log(product);*/
+
+        const product2={
+            name:'shirt',
+            rating:{
+                stars:4.5,
+                count:8
+            },
+            fun :function func1(){
+                console.log('function inside object');
+            }
+        };
+
+        console.log(product2['name']);
+        
+        console.log(product2['delivery']='nice');
+        console.log(product2['rating']['stars']);
+        console.log(product2.rating.stars);
+        console.log(product2.fun)
+
+        console.log(typeof(console.log));
+        console.log(typeof (console));//function inside an obejct is method eg.math.random()
+
+        //JSON 
+        //object with less features,no function needs double quotes
+        const jsonstring=JSON.stringify(product2);
+        console.log(jsonstring);//string
+        console.log(JSON.parse(jsonstring));
+
+        //localstorage
+        //store permenantly
+        localStorage.setItem('message','hello');//name,value
+        //only support string
+        localStorage.removeItem('score');
+
+        //auto boxing
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+        console.log(0.5.toString());
+        true.toString();
+
+        //objects are references
+    </script>
+</body>
+</html>

@@ -1,1 +1,26 @@
-                                            
+Execution of js progrsms
+                                                                                                          
+Hoisting         
+                                                                           
+                                                                                                                              
+        
+           function x(){
+            for(var i=0;i<=5;i++){      
+                function close(x){
+  setTimeout(function(){   
+                    console.log(i);
+                },x*10000)
+                }  
+                close(i)                          
+                   
+            }                          
+           }                               
+           x()                                                                                                                                     
+                       
+                                           
+
+                                                                                                                                        
+        
+                                                                           
+                                                                                                                                                                                         
+                                                                                                       

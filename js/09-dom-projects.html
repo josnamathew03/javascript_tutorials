@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM projects</title>
+</head>
+
+<body>
+    <div class="you-con">
+        <h2>Youtube subscribe</h2>
+        <button id="sub">subscribe</button>
+    </div>
+
+
+
+    <div class="ship-con">
+        <h2>Amazon Shipping Calculator</h2>
+        <p>Order under $40 : +10 shipping</p>
+        <p>Order under $40 : Free shipping</p>
+        <input type="text" id="input-el">
+        <button id="cal-el">calculate</button>
+        <p class="cost"></p>
+    </div>
+
+    <div class="exer">
+        <button class="head">Head</button>
+        <button class="tail">Tails</button>
+
+        <p class="p-el"></p>
+
+    </div>
+
+    <script>
+        const heads = document.querySelector('.head')
+        const tails = document.querySelector('.tail')
+        const pEl = document.querySelector('.p-el')
+        heads.addEventListener('click',()=>{
+            pEl.innerHTML = 'you choose heads'
+        })
+          tails.addEventListener('click',()=>{
+            pEl.innerHTML = 'you choose tails'
+        })
+
+        // -------------------------------------------------------------------
+        console.log(String(10))
+        console.log('25' - 5) //it contains a number and automatically converts the string to a number if any operaion is performed on it- type coersiona(adding wont work)
+        // ------------------------------------------------------------
+        const subEl = document.getElementById("sub")
+        subEl.addEventListener('click', () => {
+            if (subEl.innerHTML === 'subscribe') {
+                subEl.innerHTML = 'subscribed'
+
+            }
+            else {
+                subEl.innerHTML = 'subscribe'
+
+            }
+        })
+        // -------------------------------------------------------------------
+
+
+
+        const inputEl = document.getElementById('input-el')
+        const calEl = document.getElementById('cal-el')
+        const cost = document.querySelector('.cost')
+
+        function calculateTotal() {
+            let value = parseInt(inputEl.value)
+            let shipCost = 0
+            let total = 0
+            if (value < 40) {
+                shipCost = 10
+            }
+            else {
+                shipCost = 0
+            }
+            total = shipCost + value
+            cost.innerHTML = total
+        }
+
+
+        calEl.addEventListener('click', calculateTotal)
+
+        inputEl.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                calculateTotal()
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+<!-- document object rep webpage
+window object represent the browser-->
