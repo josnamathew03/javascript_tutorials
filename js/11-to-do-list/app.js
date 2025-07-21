@@ -29,45 +29,87 @@ btnEl.addEventListener('click', () => {
 
 function renderList(arr) {
     let htmlList = ''
-    for (let i = 0; i < arr.length; i++) {
+    arr.forEach((element, index) => {
         htmlList += `<p>
-                            ${arr[i].name}   : ${arr[i].due}
-                            <button id="del-btn" onclick="arr.splice(${i},1); renderList(arr)">delete</button>
+                            ${element.name}   : ${element.due}
+                            <button id="del-btn" onclick="arr.splice(${index},1); 
+                            // localStorage.removeItem();
+                             renderList(arr)">delete</button>
                          </p>`
-    }
+    });
+
+
     divEl.innerHTML = htmlList
 
 }
 
-function findIndex(food) {
-    let foodr = food.slice().reverse()
-    let count = 0
-    for (let i = 0; i < foodr.length; i++) {
-        if (foodr[i] === 'egg') {
-            count++
-            if (count <= 2) {
-                foodr.splice(i, 1)
 
-            }
-        }
-    }
-    console.log(food)
-    return foodr
+
+// function unique(arra){
+//     let res=[]
+//     for(let i=0;i<arra.length;i++){
+//         if(res.indexOf(arra[i]) === -1){
+//             res.push(arra[i])
+//         }
+//     }
+//     return res
+// }
+
+// function unique(arra){
+//     let res=[]
+//     for(let i=0;i<arra.length;i++){
+//         if(!res.includes(arra[i])){
+//             res.push(arra[i])
+//         }
+//     }
+//     return res
+// }
+
+// function unique(arra){
+//     let res=[]
+//     for(let i=0;i<arra.length;i++){
+//         if(res.indexOf(arra[i]) === -1){
+//             res.push(arra[i])
+//         }
+//     }
+//     return res
+// }
+
+function unique(arra) {
+    return [...new Set(arra)]
 }
 
-console.log(findIndex(["egg", "milk","meat", "egg","egg"]))
+console.log(unique([1, 2, 1, 4, 4]))
+
+// function findIndex(food) {
+//     let foodr = food.slice().reverse()
+//     let count = 0
+//     for (let i = 0; i < foodr.length; i++) {
+//         if (foodr[i] === 'egg') {
+//             count++
+//             if (count <= 2) {
+//                 foodr.splice(i, 1)
+
+//             }
+//         }
+//     }
+//     console.log(food)
+//     return foodr
+// }
+
+// console.log(findIndex(["egg", "milk","meat", "egg","egg"]))
 
 
-function fizzbuzz(){
-    for(let i=0;i<=20;i++){
-        if(i%3===0){
-            console.log('fizz')
-            continue
-        }
-        console.log(i)
-    }
-}
-fizzbuzz()
+// function fizzbuzz(){
+//     for(let i=0;i<=20;i++){
+//         if(i%3===0){
+//             console.log('fizz')
+//             continue
+//         }
+//         console.log(i)
+//     }
+// }
+// fizzbuzz()
 
 // const arr2= [1,2,6,6]
 // const [f,s] = arr2

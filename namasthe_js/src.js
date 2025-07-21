@@ -160,33 +160,84 @@ console.log(out7)
 
 // -------------------------------------------------------------------------------
 
+// promise
 
-const cart = ['shoes','pants']
-const promise = createOrder(cart)
+// const cart = ['shoes','pants']
+// const promise = createOrder(cart)
                                   
 
-promise.then(function(orderId){    
+// promise.then(function(orderId){    
+//     console.log(orderId)
+// })   
+// .catch(function(err){
+//     console.log(err)
+// })       
+                   
+// function createOrder(cart){
+//     const pr = new Promise(function(resolve,reject){
+//         const orderId = 123
+//         if(false){
+//             resolve(orderId)
+//         }
+//         else{
+//             const err = new Error("cart error")
+//             reject(err)
+//         }
+//     })
+//     return pr                      
+// }
+
+
+//////////////////////////////////////////////////////////////////////////////
+                                                 
+//promise chaining
+
+const cart = ['shoes','pants']
+createOrder(cart)
+.then(function(orderId){    
     console.log(orderId)
-})   
+    return orderId
+})  
+.then((orderId)=>{
+    return proceedToPayment(orderId)
+}) 
+.then((paymentInfo)=> console.log(paymentInfo))
 .catch(function(err){
     console.log(err)
-})       
+})  
+.then(()=>{
+    console.log("i run")
+})
+
                    
 function createOrder(cart){
     const pr = new Promise(function(resolve,reject){
         const orderId = 123
-        if(false){
+        if(false){   
             resolve(orderId)
         }
         else{
             const err = new Error("cart error")
-            reject(err)
-        }
-    })
+            reject(err)   
+        }           
+    }) 
     return pr                      
 }
 
-                                                 
+                 
+function proceedToPayment(orderId){ 
+    return new Promise(function(resolve,reject){
+        resolve("payment sucess")
+
+    })
+}
+                                
+////////////////////////////////////////////////////////////////////////////
+
+
+const courses = ['flat','ds']
+createCourse(courses)
+.then(()=>)
 
 
                                                                          
