@@ -107,140 +107,58 @@ const out = arr.map((x) => x.toString(2))
 console.log(out)
 
 const outf = arr.filter((x) =>
-         x % 2    
+    x % 2
 )
 console.log(outf)
 
-const outr = arr.reduce(function(acc,curr){
-    acc+=curr
+const outr = arr.reduce(function (acc, curr) {
+    acc += curr
     return acc
-},0) 
+}, 0)
 console.log(outr)
 
-const outM= arr.reduce(function(max,curr){
-    if(curr>max){
-        max=curr
+const outM = arr.reduce(function (max, curr) {
+    if (curr > max) {
+        max = curr
     }
     return max
-},0)
+}, 0)
 console.log(outM)
 
 // --------------------------------------------------
 
- const users = [
-    {fname:"jos",lname:"saini",age:26},
-    {fname:"donald",lname:'trump',age:75}
- ]
- const out4 = users.map((x)=> x.fname+" "+x.lname)
- console.log(out4)
+const users = [
+    { fname: "jos", lname: "saini", age: 26 },
+    { fname: "donald", lname: 'trump', age: 75 }
+]
+const out4 = users.map((x) => x.fname + " " + x.lname)
+console.log(out4)
 
-const out5 = users.filter((x) => x.age === 75).map((x)=> x.fname);
+const out5 = users.filter((x) => x.age === 75).map((x) => x.fname);
 console.log(out5);
 
-const out6 = users.reduce(function(acc,cur){
-    if(acc[cur.age]){
+const out6 = users.reduce(function (acc, cur) {
+    if (acc[cur.age]) {
         acc[cur.age] = ++acc[cur.age]
     }
-    else{
-        acc[cur.age]=1
+    else {
+        acc[cur.age] = 1
     }
-        return acc
+    return acc
 
-} ,{})
+}, {})
 console.log(out6)
- 
-const out7 = users.reduce(function(acc,cur){
-    if(cur.age===75){
+
+const out7 = users.reduce(function (acc, cur) {
+    if (cur.age === 75) {
         return cur.fname
     }
-},"")
+}, "")
 console.log(out7)
 
-     
+
 
 // -------------------------------------------------------------------------------
-
-// promise
-
-// const cart = ['shoes','pants']
-// const promise = createOrder(cart)
-                                  
-
-// promise.then(function(orderId){    
-//     console.log(orderId)
-// })   
-// .catch(function(err){
-//     console.log(err)
-// })       
-                   
-// function createOrder(cart){
-//     const pr = new Promise(function(resolve,reject){
-//         const orderId = 123
-//         if(false){
-//             resolve(orderId)
-//         }
-//         else{
-//             const err = new Error("cart error")
-//             reject(err)
-//         }
-//     })
-//     return pr                      
-// }
-
-
-//////////////////////////////////////////////////////////////////////////////
-                                                 
-//promise chaining
-
-const cart = ['shoes','pants']
-createOrder(cart)
-.then(function(orderId){    
-    console.log(orderId)
-    return orderId
-})  
-.then((orderId)=>{
-    return proceedToPayment(orderId)
-}) 
-.then((paymentInfo)=> console.log(paymentInfo))
-.catch(function(err){
-    console.log(err)
-})  
-.then(()=>{
-    console.log("i run")
-})
-
-                   
-function createOrder(cart){
-    const pr = new Promise(function(resolve,reject){
-        const orderId = 123
-        if(false){   
-            resolve(orderId)
-        }
-        else{
-            const err = new Error("cart error")
-            reject(err)   
-        }           
-    }) 
-    return pr                      
-}
-
-                 
-function proceedToPayment(orderId){ 
-    return new Promise(function(resolve,reject){
-        resolve("payment sucess")
-
-    })
-}
-                                
-////////////////////////////////////////////////////////////////////////////
-
-
-const courses = ['flat','ds']
-createCourse(courses)
-.then(()=>)
-
-
-                                                                         
 
 
 
