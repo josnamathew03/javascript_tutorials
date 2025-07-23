@@ -158,7 +158,7 @@ function rand() {
 
 const addBtn = document.querySelector('.add-btn')
 const pEl = document.querySelector('.p-el')
-
+     
 
 let isActive = null
 
@@ -175,10 +175,10 @@ addBtn.addEventListener('click', () => {
 
     let countl = 0  
                                
-setInterval(()=>{
-    document.title = `${countl} messages`
-    countl++
-},2000)
+// setInterval(()=>{
+//     document.title = `${countl} messages`
+//     countl++
+// },2000)
 
 
 ////////////////////////////////////////////////////////////////////////////
