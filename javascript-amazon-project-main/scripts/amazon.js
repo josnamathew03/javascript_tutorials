@@ -4,6 +4,8 @@ import {convertMoney} from './utils/money.js'
 
 let productshtml = ''
 
+// calculateTotal()
+
 products.forEach(product => {
     productshtml += `
       <div class="product-container">
