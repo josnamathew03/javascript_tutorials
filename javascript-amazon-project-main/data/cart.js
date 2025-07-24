@@ -1,3 +1,4 @@
+
 export let cart = JSON.parse(localStorage.getItem('cart'))
 if (!cart) {
     cart = [
@@ -15,22 +16,18 @@ if (!cart) {
     ]
 }
 
-// export function calculateTotal() {
-//     let totalItems = 0
+export function calculateTotal() {
+    let totalItems = 0
 
-//     cart.forEach(cartItem => {
-//         totalItems += cartItem.quantity
-//         console.log(totalItems)
-//     });
-//     const numberItems = document.querySelector('.js-number-items')
+    cart.forEach(cartItem => {
+        totalItems += cartItem.quantity
+        // console.log(totalItems)
+    });
 
-//     console.log(numberItems)
-//     numberItems.innerHTML = totalItems
-//     const cartQ = document.querySelector('.js-cart-quantity')
-//     console.log(cartQ)
+    // renderMain()
+    return totalItems
 
-//     cartQ.innerHTML = totalItems
-// }
+}
 
 
 function saveToLocal() {
@@ -42,9 +39,9 @@ export function addToCart(productId) {
 
     const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`)
     let quantityValue = Number(quantitySelector.value)
-    console.log(quantityValue)
+    // console.log(quantityValue)
     cart?.forEach((cartItem) => {
-        if (cartItem.id === productId) {
+        if (cartItem.productId === productId) {
             matchingItem = cartItem
         }
     })
@@ -110,9 +107,9 @@ export function updateDeliveryOptions(productId, deliveryOptionId) {
             matchingItem = cartItem
         }
     })
-        // console.log(deliveryOptionId)
-        matchingItem.deliveryOptionId = deliveryOptionId
-        saveToLocal()
-        // console.log( JSON.parse(localStorage.getItem('cart')))   
+    // console.log(deliveryOptionId)
+    matchingItem.deliveryOptionId = deliveryOptionId
+    saveToLocal()
+    // console.log( JSON.parse(localStorage.getItem('cart')))   
 
 }

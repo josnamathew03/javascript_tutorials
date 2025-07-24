@@ -1,12 +1,14 @@
-import { cart,addToCart } from '../data/cart.js'
+import { cart, addToCart, calculateTotal } from '../data/cart.js'
 import { products } from '../data/products.js'
-import {convertMoney} from './utils/money.js'
+import { convertMoney } from './utils/money.js'
+function renderMain() {
+  let productshtml = ''
 
-let productshtml = ''
+  const totalItems = calculateTotal()
+  const cartQ = document.querySelector('.js-cart-quantity')
+  cartQ.innerHTML = totalItems
 
-// calculateTotal()
-
-products.forEach(product => {
+  products.forEach(product => {
     productshtml += `
       <div class="product-container">
           <div class="product-image-container">
@@ -57,54 +59,58 @@ products.forEach(product => {
           </button>        
         </div>
     `
-});
+  });
 
-const proGrid = document.querySelector('.js-product-grid')
-proGrid.innerHTML = productshtml
+  const proGrid = document.querySelector('.js-product-grid')
+  proGrid.innerHTML = productshtml
 
-const addBtn = document.querySelectorAll('.js-add-to-cart')
-let isActive = null
-
+  const addBtn = document.querySelectorAll('.js-add-to-cart')
 
 
-function addedMessage(productId){
-    const added = document.querySelector(`.js-added-${productId}`)
-        added.classList.add('added')
-        if (isActive) {
-            clearTimeout(isActive)
-        }
 
-        isActive = setTimeout(() => {
-            added.classList.remove('added')
-        }, 2000
-        )
-     
-}
 
-function cartShowing(){
-       let cartQuantity = 0
-        cart.forEach((cartItem) => {
-            cartQuantity += cartItem.quantity
-        })
-        const cartQ = document.querySelector('.js-cart-quantity')
-        cartQ.innerHTML = cartQuantity
-
-}
-
-addBtn.forEach((button) => {
+  addBtn.forEach((button) => {
     button.addEventListener('click', () => {
-        const { productId } = button.dataset
+      const { productId } = button.dataset
 
-        addedMessage(productId)
+      addedMessage(productId)
 
-        addToCart(productId)
+      addToCart(productId)
+      renderMain()
 
-        cartShowing()
+      // cartShowing()
 
     })
 
-})
+  })
 
+  let isActive = null
 
+  function addedMessage(productId) {
+    const added = document.querySelector(`.js-added-${productId}`)
+    added.classList.add('added')
+    if (isActive) {
+      clearTimeout(isActive)
+    }
+
+    isActive = setTimeout(() => {
+      added.classList.remove('added')
+    }, 2000
+    )
+
+  }
+
+  // function cartShowing() {
+  //   let cartQuantity = 0
+  //   cart.forEach((cartItem) => {
+  //     cartQuantity += cartItem.quantity
+  //   })
+  //   const cartQ = document.querySelector('.js-cart-quantity')
+  //   cartQ.innerHTML = cartQuantity
+
+  // }
+
+}
+renderMain()
 
 

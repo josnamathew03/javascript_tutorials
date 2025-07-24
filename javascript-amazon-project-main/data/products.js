@@ -1,3 +1,13 @@
+export function getProduct(productId) {
+  let matchingProduct
+  products.forEach((product) => {
+    if (product.id === productId) {
+      matchingProduct = product
+    }
+  })
+  return matchingProduct 
+}
+
 export const products = [
   {
     id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
@@ -22,7 +32,7 @@ export const products = [
       stars: 4,
       count: 127
     },
-    priceCents: 2095,                      
+    priceCents: 2095,
     keywords: [
       "sports",
       "basketballs"
