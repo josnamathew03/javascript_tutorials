@@ -1,7 +1,12 @@
 import { cart, addToCart, calculateTotal } from '../data/cart.js'
-import { products } from '../data/products.js'
+import { products,loadProducts } from '../data/products.js'
 import { convertMoney } from './utils/money.js'
+
+  loadProducts(renderMain)
+
+
 function renderMain() {
+
   let productshtml = ''
 
   const totalItems = calculateTotal()
